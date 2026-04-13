@@ -1,0 +1,454 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&family=IBM+Plex+Mono:wght@300;400&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --deep:#0D2B33;
+  --abyss:#060F12;
+  --canopy:#1A4450;
+  --emergence:#3A8898;
+  --glass:#EEF5F8;
+  --iris:#EAD8EE;
+  --signal:#9B7AAD;
+  --surface:#F5EDF5;
+  --grad-main:linear-gradient(135deg,#0A1F28 0%,#0F2D35 40%,#1A4450 100%);
+  --grad-light:linear-gradient(135deg,#F5EDF5 0%,#EEF2FF 50%,#EAD8EE 100%);
+  --grad-signal:linear-gradient(135deg,#1E4E5E 0%,#2A6678 50%,#9B7AAD 100%);
+  --grad-hero:linear-gradient(160deg,#060F12 0%,#0F2D35 45%,#1A3A4A 70%,#2A2040 100%);
+}
+
+body{font-family:'Jost',sans-serif;}
+.root{display:flex;flex-direction:column;gap:1px;background:#1A2A22;}
+
+.sec{background:#0D2B33;}
+.sec-light{background:#F5EDF5;}
+
+.lbl{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#3A6A58;font-family:'IBM Plex Mono',monospace;}
+.lbl-l{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#B090C0;font-family:'IBM Plex Mono',monospace;}
+
+/* ── COVER ── */
+.cover{min-height:320px;background:var(--grad-hero);display:flex;flex-direction:column;justify-content:space-between;padding:2.5rem;}
+.cover-top{display:flex;justify-content:space-between;align-items:flex-start;}
+.cover-wordmark{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#3D8898;font-weight:300;}
+.cover-version{font-size:9px;letter-spacing:.18em;color:#1E4E5E;font-family:'IBM Plex Mono',monospace;}
+.cover-headline{font-size:72px;font-weight:200;letter-spacing:-.01em;line-height:.95;color:#EEF5F8;}
+.cover-headline em{font-style:italic;color:#9B7AAD;}
+.cover-sub{font-size:12px;font-weight:300;letter-spacing:.04em;color:#3D8898;margin-top:1rem;}
+
+/* ── SPIRIT ── */
+.spirit{padding:2rem 2.5rem;background:var(--grad-main);display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;}
+.spirit-item{border-top:.5px solid #1E4E5E;padding-top:.75rem;}
+.spirit-num{font-size:9px;letter-spacing:.18em;color:#2A6678;font-family:'IBM Plex Mono',monospace;margin-bottom:.4rem;}
+.spirit-title{font-size:15px;font-weight:300;color:#EEF5F8;margin-bottom:.4rem;letter-spacing:.02em;}
+.spirit-body{font-size:11px;font-weight:300;color:#4A8878;line-height:1.65;}
+
+/* ── COLOR ── */
+.color-section{padding:2rem 2.5rem;background:#060F12;}
+.color-hero-row{display:flex;gap:1px;height:120px;border-radius:6px;overflow:hidden;margin-bottom:1px;}
+.ch{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:.75rem;}
+.ch-name{font-size:11px;font-weight:300;letter-spacing:.04em;margin-bottom:1px;}
+.ch-hex{font-size:9px;font-family:'IBM Plex Mono',monospace;opacity:.6;}
+
+.grad-row{display:flex;gap:1px;height:56px;border-radius:4px;overflow:hidden;margin-bottom:1.25rem;}
+.gr{flex:1;display:flex;align-items:flex-end;padding:.4rem .5rem;}
+.gr-lbl{font-size:8px;font-family:'IBM Plex Mono',monospace;letter-spacing:.06em;opacity:.55;}
+
+.tint-row{display:flex;gap:1px;height:32px;border-radius:3px;overflow:hidden;margin-bottom:.35rem;}
+.tint{flex:1;}
+.tint-labels{display:flex;justify-content:space-between;font-size:8px;font-family:'IBM Plex Mono',monospace;color:#2A5A48;margin-bottom:1.25rem;}
+
+/* ── TYPE ── */
+.type-section{padding:2rem 2.5rem;background:var(--grad-main);}
+.type-hero{font-size:80px;font-weight:200;letter-spacing:-.02em;line-height:.9;color:#EEF5F8;margin-bottom:1.5rem;}
+.type-hero span{color:#9B7AAD;}
+.type-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#1A3A3A;border-radius:4px;overflow:hidden;margin-bottom:1.5rem;}
+.type-cell{background:#0D2B33;padding:.9rem .75rem;}
+.type-specimen{}
+.type-spec-lbl{font-size:9px;font-family:'IBM Plex Mono',monospace;color:#2A6678;margin-bottom:.4rem;letter-spacing:.1em;}
+.type-scale{display:flex;flex-direction:column;gap:.5rem;}
+.scale-item{display:flex;align-items:baseline;gap:.75rem;}
+.scale-size{font-size:9px;font-family:'IBM Plex Mono',monospace;color:#2A5A48;width:28px;flex-shrink:0;}
+
+/* ── USAGE DARK ── */
+.usage-dark{padding:2rem 2.5rem;background:#060F12;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.mock{border-radius:8px;overflow:hidden;border:.5px solid #1A3A3A;}
+.mock-bar{height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 1rem;border-bottom:.5px solid #1A3A3A;}
+.mock-dot{width:6px;height:6px;border-radius:50%;background:#1E4E5E;}
+.mock-nav{font-size:9px;letter-spacing:.14em;color:#2A6678;font-family:'IBM Plex Mono',monospace;}
+.mock-body{padding:1.5rem;}
+.mock-kicker{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#3D8898;font-family:'IBM Plex Mono',monospace;margin-bottom:.5rem;}
+.mock-h{font-size:22px;font-weight:200;letter-spacing:.02em;line-height:1.1;margin-bottom:.75rem;}
+.mock-p{font-size:11px;font-weight:300;line-height:1.7;opacity:.55;}
+.mock-btn{display:inline-block;margin-top:.9rem;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:.4rem 1rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;}
+
+/* ── USAGE LIGHT ── */
+.usage-light{padding:2rem 2.5rem;background:var(--grad-light);display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.mock-l{border-radius:8px;overflow:hidden;border:.5px solid #D8C8E8;background:#FAF6FB;}
+.mock-bar-l{height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 1rem;border-bottom:.5px solid #E4D4F0;background:#F5EDF5;}
+.mock-nav-l{font-size:9px;letter-spacing:.14em;color:#B090C0;font-family:'IBM Plex Mono',monospace;}
+.mock-kicker-l{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#9B7AAD;font-family:'IBM Plex Mono',monospace;margin-bottom:.5rem;}
+.mock-h-l{font-size:22px;font-weight:200;letter-spacing:.02em;line-height:1.1;color:#0D2B33;margin-bottom:.75rem;}
+.mock-p-l{font-size:11px;font-weight:300;line-height:1.7;color:#4A6070;opacity:.8;}
+.mock-btn-l{display:inline-block;margin-top:.9rem;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:.4rem 1rem;border-radius:2px;font-family:'IBM Plex Mono',monospace;background:#EAD8EE;color:#5A3A70;}
+
+/* ── GRADIENT SHOWCASE ── */
+.grad-showcase{padding:2rem 2.5rem;background:#060F12;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;}
+.grad-card{border-radius:6px;overflow:hidden;}
+.grad-face{height:100px;}
+.grad-meta{padding:.75rem;background:#0A1E25;}
+.grad-name{font-size:11px;font-weight:300;color:#EEF5F8;margin-bottom:2px;}
+.grad-use{font-size:10px;color:#3A6A58;line-height:1.5;}
+
+/* ── VOICE ── */
+.voice{padding:2rem 2.5rem;background:var(--grad-hero);}
+.voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.voice-card{border:.5px solid #1A3A3A;border-radius:6px;padding:1.25rem;}
+.voice-title{font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.75rem;}
+.voice-item{font-size:12px;font-weight:300;line-height:1.6;padding:.4rem 0;border-bottom:.5px solid #1A3A3A;color:#5A9888;}
+.voice-item:last-child{border-bottom:none;}
+.voice-item strong{font-weight:400;color:#EEF5F8;}
+
+/* ── FOOTER ── */
+.footer{padding:1.5rem 2.5rem;background:#060F12;display:flex;justify-content:space-between;align-items:center;border-top:.5px solid #1A3A3A;}
+.footer-mark{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:300;color:#3D8898;}
+.footer-meta{font-size:9px;font-family:'IBM Plex Mono',monospace;color:#1E4E5E;text-align:right;line-height:1.8;}
+</style>
+
+<div class="root">
+
+<!-- ── COVER ─────────────────────────────── -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-wordmark">Forma</div>
+    <div class="cover-version">Brand Guidelines · v1.0 · 2026</div>
+  </div>
+  <div>
+    <div class="cover-headline">Intel<em>li</em>gence,<br>with taste.</div>
+    <div class="cover-sub">AI creative tool · built by designers, for designers</div>
+  </div>
+</div>
+
+<!-- ── BRAND SPIRIT ───────────────────────── -->
+<div class="spirit">
+  <div class="spirit-item">
+    <div class="spirit-num">01</div>
+    <div class="spirit-title">Subtractive minimalism</div>
+    <div class="spirit-body">Quiet luxury. Restraint as a form of control. Every element present because it earns its place — nothing decorative, nothing explained twice.</div>
+  </div>
+  <div class="spirit-item">
+    <div class="spirit-num">02</div>
+    <div class="spirit-title">Material precision</div>
+    <div class="spirit-body">Intelligence lives in the details. The difference between good and exact. A tool that understands what it means to care about the 0.5px.</div>
+  </div>
+  <div class="spirit-item">
+    <div class="spirit-num">03</div>
+    <div class="spirit-title">Editorial framing</div>
+    <div class="spirit-body">Curated, flexible, new space. Every composition a considered act of selection — what is in, and what is withheld, are equal decisions.</div>
+  </div>
+</div>
+
+<!-- ── COLOR SYSTEM ───────────────────────── -->
+<div class="color-section">
+
+  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.25rem;">
+    <div class="lbl">Color system</div>
+    <div style="font-size:9px;font-family:'IBM Plex Mono',monospace;color:#1E4E5E;">Two anchors · one bridge · one signal</div>
+  </div>
+
+  <div class="color-hero-row">
+    <div class="ch" style="background:#060F12;flex:0.6;">
+      <div class="ch-name" style="color:#1E4E5E;">Abyss</div>
+      <div class="ch-hex" style="color:#1E4E5E;">#060F12</div>
+    </div>
+    <div class="ch" style="background:var(--grad-main);flex:2;">
+      <div class="ch-name" style="color:#3D8898;">Deep Forma</div>
+      <div class="ch-hex" style="color:#2A6678;">#0D2B33 → #1A4450</div>
+    </div>
+    <div class="ch" style="background:#3A8898;flex:0.7;">
+      <div class="ch-name" style="color:#EEF5F8;">Emergence</div>
+      <div class="ch-hex" style="color:#A8D8E0;">#3A8898</div>
+    </div>
+    <div class="ch" style="background:var(--grad-light);flex:1.5;">
+      <div class="ch-name" style="color:#9B7AAD;">Forma Light</div>
+      <div class="ch-hex" style="color:#B090C0;">#F5EDF5 → #EAD8EE</div>
+    </div>
+    <div class="ch" style="background:#9B7AAD;flex:0.7;">
+      <div class="ch-name" style="color:#F5EDF5;">Signal</div>
+      <div class="ch-hex" style="color:#EAD8EE;">#9B7AAD</div>
+    </div>
+  </div>
+
+  <!-- DARK SCALE -->
+  <div class="lbl" style="margin-bottom:.5rem;margin-top:1.25rem;">Dark scale</div>
+  <div class="tint-row">
+    <div class="tint" style="background:#060F12;"></div>
+    <div class="tint" style="background:#0A2028;"></div>
+    <div class="tint" style="background:#0D2B33;"></div>
+    <div class="tint" style="background:#163C48;"></div>
+    <div class="tint" style="background:#1A4450;"></div>
+    <div class="tint" style="background:#1E4E5E;"></div>
+    <div class="tint" style="background:#2A6678;"></div>
+    <div class="tint" style="background:#3A8898;"></div>
+    <div class="tint" style="background:#7ABFCC;"></div>
+    <div class="tint" style="background:#B8E0E8;"></div>
+  </div>
+  <div class="tint-labels"><span>Abyss</span><span>Ground</span><span>Canopy</span><span>Emergence</span><span>Glass</span></div>
+
+  <!-- LIGHT SCALE -->
+  <div class="lbl" style="margin-bottom:.5rem;">Light scale</div>
+  <div class="tint-row">
+    <div class="tint" style="background:#D8C0E8;"></div>
+    <div class="tint" style="background:#E0CCEA;"></div>
+    <div class="tint" style="background:#EAD8EE;"></div>
+    <div class="tint" style="background:#EFE2F2;"></div>
+    <div class="tint" style="background:#F2E8F4;"></div>
+    <div class="tint" style="background:#F5EDF5;"></div>
+    <div class="tint" style="background:#F8F2F8;"></div>
+    <div class="tint" style="background:#FAF6FA;"></div>
+    <div class="tint" style="background:#FCF9FC;"></div>
+    <div class="tint" style="background:#FEFCFE;"></div>
+  </div>
+  <div class="tint-labels"><span>Iris depth</span><span>Surface</span><span>Pure light</span></div>
+
+  <!-- GRADIENTS -->
+  <div class="lbl" style="margin-bottom:.75rem;">Gradient system</div>
+  <div class="grad-row">
+    <div class="gr" style="background:linear-gradient(135deg,#060F12 0%,#0D2B33 50%,#1A4450 100%);">
+      <span class="gr-lbl" style="color:#2A6678;">Forest void · hero ground</span>
+    </div>
+    <div class="gr" style="background:linear-gradient(135deg,#0D2B33 0%,#1E4E5E 50%,#3A8898 100%);">
+      <span class="gr-lbl" style="color:#A8D8E0;">Emergence · dark UI surface</span>
+    </div>
+    <div class="gr" style="background:linear-gradient(135deg,#1A3A48 0%,#2A3A60 50%,#6A4A90 100%);">
+      <span class="gr-lbl" style="color:#C0A8D8;">Deep signal · CTA dark</span>
+    </div>
+    <div class="gr" style="background:linear-gradient(135deg,#F5EDF5 0%,#EEF0FF 50%,#EAD8EE 100%);">
+      <span class="gr-lbl" style="color:#9B7AAD;">Dawn · light mode hero</span>
+    </div>
+    <div class="gr" style="background:linear-gradient(135deg,#EAD8EE 0%,#D8C8E8 50%,#9B7AAD 100%);">
+      <span class="gr-lbl" style="color:#F5EDF5;">Iris · CTA light</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── GRADIENT SHOWCASE ───────────────────── -->
+<div class="grad-showcase">
+  <div class="grad-card">
+    <div class="grad-face" style="background:linear-gradient(160deg,#060F12 0%,#0D2B33 45%,#1A3A4A 70%,#2A2040 100%);display:flex;align-items:flex-end;padding:.75rem;">
+      <div style="font-size:18px;font-weight:200;letter-spacing:.04em;color:#EEF5F8;">Forest void</div>
+    </div>
+    <div class="grad-meta">
+      <div class="grad-name">Hero · marketing ground</div>
+      <div class="grad-use">#060F12 → #0D2B33 → #2A2040<br>160° · The Séance direction</div>
+    </div>
+  </div>
+  <div class="grad-card">
+    <div class="grad-face" style="background:linear-gradient(135deg,#0D2B33 0%,#1E4E5E 40%,#3A8898 100%);display:flex;align-items:flex-end;padding:.75rem;">
+      <div style="font-size:18px;font-weight:200;letter-spacing:.04em;color:#EEF5F8;">Emergence</div>
+    </div>
+    <div class="grad-meta">
+      <div class="grad-name">Active · interactive states</div>
+      <div class="grad-use">#0D2B33 → #3A8898<br>135° · Button, hover, selected</div>
+    </div>
+  </div>
+  <div class="grad-card">
+    <div class="grad-face" style="background:linear-gradient(135deg,#1A3A48 0%,#2A3060 50%,#7A4A9A 100%);display:flex;align-items:flex-end;padding:.75rem;">
+      <div style="font-size:18px;font-weight:200;letter-spacing:.04em;color:#EEF5F8;">Deep signal</div>
+    </div>
+    <div class="grad-meta">
+      <div class="grad-name">CTA · primary action on dark</div>
+      <div class="grad-use">#1A3A48 → #7A4A9A<br>135° · The intelligence moment</div>
+    </div>
+  </div>
+  <div class="grad-card">
+    <div class="grad-face" style="background:linear-gradient(135deg,#F5EDF5 0%,#EEF0FF 50%,#EAD8EE 100%);display:flex;align-items:flex-end;padding:.75rem;">
+      <div style="font-size:18px;font-weight:200;letter-spacing:.04em;color:#0D2B33;">Dawn</div>
+    </div>
+    <div class="grad-meta">
+      <div class="grad-name">Light hero · editorial ground</div>
+      <div class="grad-use">#F5EDF5 → #EAD8EE<br>135° · Light mode marketing</div>
+    </div>
+  </div>
+  <div class="grad-card">
+    <div class="grad-face" style="background:linear-gradient(135deg,#EAD8EE 0%,#C8B0E0 50%,#9B7AAD 100%);display:flex;align-items:flex-end;padding:.75rem;">
+      <div style="font-size:18px;font-weight:200;letter-spacing:.04em;color:#2A0A3A;">Iris</div>
+    </div>
+    <div class="grad-meta">
+      <div class="grad-name">CTA · action on light mode</div>
+      <div class="grad-use">#EAD8EE → #9B7AAD<br>135° · Button, CTA, signal</div>
+    </div>
+  </div>
+  <div class="grad-card">
+    <div class="grad-face" style="background:linear-gradient(135deg,#0D2B33 0%,#1A4450 30%,#EAD8EE 100%);display:flex;align-items:flex-end;padding:.75rem;">
+      <div style="font-size:18px;font-weight:200;letter-spacing:.04em;color:#EEF5F8;">Threshold</div>
+    </div>
+    <div class="grad-meta">
+      <div class="grad-name">Transition · the brand moment</div>
+      <div class="grad-use">#0D2B33 → #EAD8EE<br>Dark to light · use sparingly</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TYPOGRAPHY ────────────────────────── -->
+<div class="type-section">
+  <div class="lbl" style="color:#2A6678;margin-bottom:1.5rem;">Typography</div>
+  <div class="type-hero">Jost<span> —</span><br>200·300·400</div>
+
+  <div class="type-grid">
+    <div class="type-cell">
+      <div class="type-spec-lbl">Display · 200 ExtraLight</div>
+      <div style="font-size:36px;font-weight:200;letter-spacing:-.01em;color:#EEF5F8;line-height:1;">Forma</div>
+      <div style="font-size:24px;font-weight:200;letter-spacing:.02em;color:#EEF5F8;line-height:1;margin-top:.4rem;font-style:italic;">Studio</div>
+    </div>
+    <div class="type-cell">
+      <div class="type-spec-lbl">Heading · 300 Light</div>
+      <div style="font-size:20px;font-weight:300;letter-spacing:.01em;color:#EEF5F8;line-height:1.2;">Intelligence,<br>with taste.</div>
+    </div>
+    <div class="type-cell">
+      <div class="type-spec-lbl">Body · 300 Light</div>
+      <div style="font-size:12px;font-weight:300;color:#7ABFCC;line-height:1.75;">The detail level where precision becomes invisible. A tool that recedes until the moment it matters.</div>
+    </div>
+    <div class="type-cell">
+      <div class="type-spec-lbl">Label · mono annotation</div>
+      <div style="font-size:9px;font-family:'IBM Plex Mono',monospace;letter-spacing:.18em;color:#3A8898;line-height:1.8;text-transform:uppercase;">Object · No. 001<br>Acquired 2026<br>Forest void collection</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.25rem;">
+    <div style="border:.5px solid #1A3A3A;border-radius:4px;padding:1rem;">
+      <div class="lbl" style="margin-bottom:.75rem;color:#2A5A48;">Type scale</div>
+      <div class="type-scale">
+        <div class="scale-item"><span class="scale-size">72</span><span style="font-size:28px;font-weight:200;color:#EEF5F8;letter-spacing:-.02em;">Hero display</span></div>
+        <div class="scale-item"><span class="scale-size">48</span><span style="font-size:20px;font-weight:200;color:#EEF5F8;letter-spacing:-.01em;">Section title</span></div>
+        <div class="scale-item"><span class="scale-size">32</span><span style="font-size:15px;font-weight:300;color:#7ABFCC;">Card headline</span></div>
+        <div class="scale-item"><span class="scale-size">20</span><span style="font-size:12px;font-weight:300;color:#5A9888;">Subheading</span></div>
+        <div class="scale-item"><span class="scale-size">14</span><span style="font-size:11px;font-weight:300;color:#4A8878;">Body text</span></div>
+        <div class="scale-item"><span class="scale-size">11</span><span style="font-size:10px;font-weight:400;color:#3D7868;font-family:'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;">Label / mono</span></div>
+      </div>
+    </div>
+    <div style="border:.5px solid #1A3A3A;border-radius:4px;padding:1rem;">
+      <div class="lbl" style="margin-bottom:.75rem;color:#2A5A48;">Rules</div>
+      <div style="display:flex;flex-direction:column;gap:.5rem;">
+        <div style="font-size:11px;font-weight:300;color:#4A8878;line-height:1.6;padding:.5rem 0;border-bottom:.5px solid #1A3A3A;">Display at 200 ExtraLight only. Never heavier at large sizes — the weight is the elegance.</div>
+        <div style="font-size:11px;font-weight:300;color:#4A8878;line-height:1.6;padding:.5rem 0;border-bottom:.5px solid #1A3A3A;">IBM Plex Mono for all metadata, measurements, version numbers, catalog annotations.</div>
+        <div style="font-size:11px;font-weight:300;color:#4A8878;line-height:1.6;padding:.5rem 0;border-bottom:.5px solid #1A3A3A;">No bold (500+) in running text. Hierarchy from size and spacing, never weight.</div>
+        <div style="font-size:11px;font-weight:300;color:#4A8878;line-height:1.6;padding:.5rem 0;">Italic 200 for brand moments and emphasis — not for UI states.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── UI DARK ───────────────────────────── -->
+<div class="usage-dark">
+  <div>
+    <div class="lbl" style="margin-bottom:1rem;">Dark mode</div>
+    <div class="mock">
+      <div class="mock-bar" style="background:#0A2028;">
+        <div class="mock-dot"></div>
+        <div class="mock-nav">Forma Studio</div>
+        <div style="font-size:9px;font-family:'IBM Plex Mono',monospace;color:#1E4E5E;">v 1.0</div>
+      </div>
+      <div class="mock-body" style="background:#0D2B33;">
+        <div class="mock-kicker">New · Object 001</div>
+        <div class="mock-h" style="color:#EEF5F8;">Precision has<br>always been<br>beautiful.</div>
+        <div class="mock-p" style="color:#5A9888;">A creative tool built for designers who notice the difference between good and exact.</div>
+        <div class="mock-btn" style="background:linear-gradient(135deg,#1A3A48,#7A4A9A);color:#EEF5F8;border:none;">Begin · →</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="lbl" style="margin-bottom:1rem;opacity:0;">—</div>
+    <div class="mock">
+      <div class="mock-bar" style="background:#060F12;">
+        <div class="mock-dot" style="background:#3A8898;"></div>
+        <div class="mock-nav">Canvas · Untitled</div>
+        <div style="font-size:9px;font-family:'IBM Plex Mono',monospace;color:#1E4E5E;">Auto-saved</div>
+      </div>
+      <div class="mock-body" style="background:#0A2028;padding:1rem;">
+        <div style="height:8px;background:#163C48;border-radius:2px;margin-bottom:.5rem;width:70%;"></div>
+        <div style="height:8px;background:#163C48;border-radius:2px;margin-bottom:.5rem;width:50%;"></div>
+        <div style="height:48px;background:linear-gradient(135deg,#1A4450,#2A6678);border-radius:4px;margin-bottom:.5rem;border:.5px solid #2A6678;"></div>
+        <div style="display:flex;gap:.4rem;">
+          <div style="flex:1;height:32px;background:#163C48;border-radius:3px;border:.5px solid #1E4E5E;"></div>
+          <div style="flex:1;height:32px;background:#163C48;border-radius:3px;border:.5px solid #1E4E5E;"></div>
+          <div style="flex:1;height:32px;background:linear-gradient(135deg,#1A3A48,#3A4A80);border-radius:3px;border:.5px solid #3A5A80;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── UI LIGHT ───────────────────────────── -->
+<div class="usage-light">
+  <div>
+    <div class="lbl-l" style="margin-bottom:1rem;">Light mode</div>
+    <div class="mock-l">
+      <div class="mock-bar-l">
+        <div style="width:6px;height:6px;border-radius:50%;background:#C8AAD8;"></div>
+        <div class="mock-nav-l">Forma Studio</div>
+        <div style="font-size:9px;font-family:'IBM Plex Mono',monospace;color:#C0A8D0;">v 1.0</div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div class="mock-kicker-l">New · Object 001</div>
+        <div class="mock-h-l">Precision has<br>always been<br>beautiful.</div>
+        <div class="mock-p-l">A creative tool built for designers who notice the difference between good and exact.</div>
+        <div class="mock-btn-l">Begin · →</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="lbl-l" style="margin-bottom:1rem;opacity:0;">—</div>
+    <div class="mock-l">
+      <div class="mock-bar-l">
+        <div style="width:6px;height:6px;border-radius:50%;background:#9B7AAD;"></div>
+        <div class="mock-nav-l">Canvas · Untitled</div>
+        <div style="font-size:9px;font-family:'IBM Plex Mono',monospace;color:#C0A8D0;">Auto-saved</div>
+      </div>
+      <div style="padding:1rem;background:#FAF6FB;">
+        <div style="height:8px;background:#EAD8EE;border-radius:2px;margin-bottom:.5rem;width:70%;"></div>
+        <div style="height:8px;background:#EAD8EE;border-radius:2px;margin-bottom:.5rem;width:50%;"></div>
+        <div style="height:48px;background:linear-gradient(135deg,#EAD8EE,#C8B0E0);border-radius:4px;margin-bottom:.5rem;border:.5px solid #C8AAD8;"></div>
+        <div style="display:flex;gap:.4rem;">
+          <div style="flex:1;height:32px;background:#F5EDF5;border-radius:3px;border:.5px solid #D8C8E8;"></div>
+          <div style="flex:1;height:32px;background:#F5EDF5;border-radius:3px;border:.5px solid #D8C8E8;"></div>
+          <div style="flex:1;height:32px;background:linear-gradient(135deg,#EAD8EE,#9B7AAD);border-radius:3px;border:.5px solid #C0A0D0;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── VOICE ─────────────────────────────── -->
+<div class="voice">
+  <div class="lbl" style="color:#2A6678;margin-bottom:1.25rem;">Brand voice</div>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-title" style="color:#3D8898;">Forma sounds like</div>
+      <div class="voice-item"><strong>Terse.</strong> We don't explain what you already know.</div>
+      <div class="voice-item"><strong>Precise.</strong> Every word chosen. Nothing decorative.</div>
+      <div class="voice-item"><strong>Dry.</strong> Wit without trying. Confidence without performing.</div>
+      <div class="voice-item"><strong>Respectful.</strong> Addresses designers as designers, not users.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-title" style="color:#6A4A80;">Forma never sounds like</div>
+      <div class="voice-item" style="color:#3A5A48;">Empowering your creativity · unleash your vision</div>
+      <div class="voice-item" style="color:#3A5A48;">Magical · revolutionary · next-generation anything</div>
+      <div class="voice-item" style="color:#3A5A48;">We're excited to announce...</div>
+      <div class="voice-item" style="color:#3A5A48;">For designers, by designers! · Join the community</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ───────────────────────────── -->
+<div class="footer">
+  <div class="footer-mark">Forma</div>
+  <div class="footer-meta">
+    Intelligence, with taste.<br>
+    Jost 200 · IBM Plex Mono · #0D2B33 · #F5EDF5 · #9B7AAD
+  </div>
+</div>
+
+</div>
